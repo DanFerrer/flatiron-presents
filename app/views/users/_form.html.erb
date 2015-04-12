@@ -6,7 +6,7 @@
     <%= f.input :password_digest %>
     <%= f.input :email %>
     <%= f.input :bio %>
-    <%= f.input :birthday %>
+    <%= f.input :birthday, as: :date, start_year: 1989 %>
     <%= f.input :location %>
     <%= f.input :alive %>
   </div>
