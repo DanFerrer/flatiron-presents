@@ -3,10 +3,10 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :password_digest %>
+    <%= f.input :password_digest, label: "Password" %>
     <%= f.input :email %>
     <%= f.input :bio %>
-    <%= f.input :birthday %>
+    <%= f.input :birthday, as: :date, start_year: 1989 %>
     <%= f.input :location %>
     <%= f.input :alive %>
   </div>
