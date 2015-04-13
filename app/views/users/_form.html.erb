@@ -1,18 +1,54 @@
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for(@user , html: { class: 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :password %>
+    <%= f.input :password, hint: 'No special characters.' %>
     <%= f.input :password_confirmation  %>
     <%= f.input :email %>
     <%= f.input :bio %>
-    <%= f.input :birthday %>
+    <%= f.input :birthday, as: :date %>
     <%= f.input :location %>
     <%= f.input :alive %>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %><br>
+  </div>
+  <div class="field">
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign Up" %>
   </div>
 <% end %>
