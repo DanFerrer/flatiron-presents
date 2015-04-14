@@ -27,6 +27,15 @@
 
 <p>
   <strong>Alive:</strong>
+  <%if @user.alive %>
+    <h1>I am alive</h1>
+  <% else %>
+   <h1>I am a ZOMBIE!!</h1>
+   <% end %>
+</p>
+
+<p>
+  <strong>Alive:</strong>
   <%= @user.is_zombie %>
 </p>
 
