@@ -7,27 +7,39 @@
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
+    <%= @user.email %>
 </p>
 
 <p>
   <strong>Bio:</strong>
-  <%= @user.bio %>
+  <% if @user.bio.present? %>
+    <%= @user.bio %>
+  <% else %>
+    <p class="text-muted">"None Given"</p>
+  <% end %>
 </p>
 
 <p>
   <strong>Birthday:</strong>
-  <%= @user.birthday %>
+  <% if @user.birthday.present? %>
+    <%= @user.birthday %>
+  <% else %>
+    <p class="text-muted">"None Given"</p>
+  <% end %>
 </p>
 
 <p>
   <strong>Location:</strong>
-  <%= @user.location %>
+  <% if @user.location.present? %>
+    <%= @user.location %>
+  <% else %>
+    <p class="text-muted">"None Given"</p>
+  <% end %>
 </p>
 
 <p>
   <strong>Alive:</strong>
-  <%= @user.is_zombie %>
+  <%= @user.alive %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
