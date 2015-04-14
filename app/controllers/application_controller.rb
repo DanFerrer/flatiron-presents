@@ -1,4 +1,4 @@
-# require_relative '../decorators/user_decorator.rb'
+require_relative '../decorators/user_decorator.rb'
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -9,6 +9,5 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-
   end
 end
